@@ -58,7 +58,7 @@ FROM departments
 WHERE commission_pct IS NOT NULL
 GROUP BY department_name;
 --12. job title and average salary of employees.
-SELECT job_title, AVG(salary)
+SELECT job_title, AVG(SALARY)
 FROM jobs
          LEFT JOIN employees USING (job_id)
 GROUP BY job_title;
@@ -110,7 +110,7 @@ WHERE employee_id IN (134, 159, 183);
 --20. all the information of the employees whose salary is within the range of smallest salary and 2500.
 SELECT *
 FROM employees
-WHERE salary BETWEEN
+WHERE SALARY BETWEEN
           (SELECT MIN(salary)
            FROM employees) AND 2500;
 --21. all the information of the employees who does not work in those departments WHERE some employees works whose id within the range 100 and 200.
