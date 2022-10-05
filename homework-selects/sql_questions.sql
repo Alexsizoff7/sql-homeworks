@@ -151,12 +151,6 @@ FROM employees
          JOIN job_history USING (employee_id)
          JOIN jobs ON (jobs.job_id = job_history.job_id)
 WHERE commission_pct IS NULL;
-
--- test
-select employee_id, first_name || ' ' || last_name as Name, commission_pct
-from job_history
-         join employees using (employee_id)
-ORDER BY employee_id ASC;
 --26. the employee number, name( first name and last name ), and salary for all employees who earn more than the average salary and who work in a department with any employee with a J in their name.
 SELECT employee_id, first_name || ' ' || last_name as Name, salary
 FROM employees
@@ -220,5 +214,6 @@ WHERE salary >
 --46. the first and last name, salary, and department ID for those employees who earn less than the average salary, and also work at the department WHERE the employee Laura is working as a first name holder.
 --47. the full name (first and last name) of manager who is supervising 4 or more employees.
 --48. the details of the current job for those employees who worked as a Sales Representative in the past.
---49. all the inFROMation about those employees who earn second lowest salary of all the employees.
+--49. all the infromation about those employees who earn second lowest salary of all the employees.
 --50. the department ID, full name (first and last name), salary for those employees who is highest salary drawar in a department.
+
